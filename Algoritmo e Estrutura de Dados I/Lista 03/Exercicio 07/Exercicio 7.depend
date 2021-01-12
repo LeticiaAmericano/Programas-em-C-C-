@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1610413426 source:c:\users\letic\onedrive\documentos\github\programas-em-c-c-\algoritmo e estrutura de dados i\lista 03\exercicio 7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
