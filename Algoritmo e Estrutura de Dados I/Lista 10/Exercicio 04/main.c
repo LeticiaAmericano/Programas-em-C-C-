@@ -9,7 +9,7 @@ void Transicao(float *primeiroValor, float *segundoValor);
 int main()
 {
     //Calcular e escrever o segundo maior valor.
-    printf("\nCalculo do segundo maior valor");
+    printf("\nCalculo do segundo maior valor\n");
     float primeiroValor = Valor();
     float segundoValor = Valor();
     float terceiroValor = Valor();
@@ -32,19 +32,21 @@ void Organizacao(float *primeiroValor, float *segundoValor, float *terceiroValor
     do
     {
         if(*primeiroValor > *segundoValor)
-            Transicao(&primeiroValor, &segundoValor);
+        {
+            float tmp;
+            tmp = *primeiroValor;
+            *primeiroValor = *segundoValor;
+            *segundoValor = tmp;
+        }
         if(*segundoValor > *terceiroValor)
-            Transicao(&segundoValor, &terceiroValor);
+        {
+            float tmp;
+            tmp = *segundoValor;
+            *segundoValor = *terceiroValor;
+            *terceiroValor = tmp;
+        }
     }
-    while(!(primeiroValor < segundoValor && segundoValor < terceiroValor));
-}
-
-void Transicao(float *primeiroValor, float *segundoValor)
-{
-    float tmp;
-    tmp = *primeiroValor;
-    *primeiroValor = *segundoValor;
-    *segundoValor = tmp;
+    while(!(*primeiroValor < *segundoValor && *segundoValor < *terceiroValor));
 }
 
 void Resultado(float *segundoValor)
